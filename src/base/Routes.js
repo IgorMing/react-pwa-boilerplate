@@ -1,7 +1,7 @@
 import React from 'react';
 
-import AppRouter from '../base/AppRouter';
-import AppRoute, { ACCESS_TYPES } from '../base/AppRoute';
+import AppRouter from './AppRouter';
+import AppRoute, { ACCESS_TYPES } from './AppRoute';
 
 import Login from '../pages/Login';
 import Home from '../pages/Home';
