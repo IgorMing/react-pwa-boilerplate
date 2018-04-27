@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom';
 
 import { loginAction } from 'components/Auth/duck';
 import LoginForm from 'components/LoginForm';
@@ -9,7 +8,6 @@ import LoginForm from 'components/LoginForm';
 const mapDispatchToProps = { login: loginAction };
 
 @connect(null, mapDispatchToProps)
-@withRouter
 export default class Login extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired
