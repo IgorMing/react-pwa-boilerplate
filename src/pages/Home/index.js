@@ -2,9 +2,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
+import { logoutAction } from 'components/Auth/duck';
+
 import './index.css';
 import { callFlow, resetFlow } from './duck';
-import { logoutAction } from '../../components/Auth/duck';
 
 class Home extends Component {
   static propTypes = {
