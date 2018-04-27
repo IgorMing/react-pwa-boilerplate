@@ -6,7 +6,11 @@ import { withRouter } from 'react-router-dom';
 import { loginAction } from 'components/Auth/duck';
 import LoginForm from 'components/LoginForm';
 
-class Login extends Component {
+const mapDispatchToProps = { login: loginAction };
+
+@connect(null, mapDispatchToProps)
+@withRouter
+export default class Login extends Component {
   static propTypes = {
     login: PropTypes.func.isRequired
   }
@@ -20,7 +24,3 @@ class Login extends Component {
     return <LoginForm onSubmit={this.onSubmit} />;
   }
 }
-
-const mapDispatchToProps = { login: loginAction };
-
-export default connect(null, mapDispatchToProps)(withRouter(Login));

@@ -7,7 +7,11 @@ import { logoutAction } from 'components/Auth/duck';
 import './index.css';
 import { callFlow, resetFlow } from './duck';
 
-class Home extends Component {
+const mapStateToProps = ({ home }) => ({ ...home });
+const mapDispatchToProps = { callFlow, resetFlow, logout: logoutAction };
+
+@connect(mapStateToProps, mapDispatchToProps)
+export default class Home extends Component {
   static propTypes = {
     callFlow: PropTypes.func.isRequired,
     calls: PropTypes.number.isRequired,
@@ -43,8 +47,3 @@ class Home extends Component {
     );
   }
 }
-
-const mapStateToProps = ({ home }) => ({ ...home });
-const mapDispatchToProps = { callFlow, resetFlow, logout: logoutAction };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
